@@ -1,0 +1,231 @@
+/* Loaded after legacy stylesheet rules: definitive pure-red contact corrections. */
+.hero-name,
+.hero-name span,
+.hero-name small,
+.hero h1,
+.about-title,
+.about-title em,
+.journey-title,
+.journey-title em,
+.skills-heading,
+.skills-heading em,
+.projects-title,
+.projects-title em,
+.capability-heading h2,
+.capability-heading em,
+.cert-intro h2,
+.cert-intro em,
+.contact h2,
+.contact h2 span,
+.site-nav .brand span,
+.site-nav nav > a,
+.kicker,
+.timeline-card > p,
+.contact-button,
+.contact-button b {
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.hero-name,
+.hero-name span,
+.hero-name small,
+.hero h1,
+.about-title,
+.about-title em,
+.journey-title,
+.journey-title em,
+.skills-heading,
+.skills-heading em,
+.projects-title,
+.projects-title em,
+.capability-heading h2,
+.capability-heading em,
+.cert-intro h2,
+.cert-intro em,
+.contact h2,
+.contact h2 span {
+  color: #ff0000 !important;
+}
+
+.contact h2 span {
+  color: #ff0000 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.contact .contact-button,
+.contact .contact-button b {
+  color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  background: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.contact .contact-button:hover {
+  background: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: #fff !important;
+}
+
+.contact .contact-button:hover b {
+  color: #fff !important;
+}
+
+/* Viewport-progressive reveal: HTML stays in normal flow and visible without JS. */
+.arrow-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.arrow-card.reveal-region {
+  --reveal-hide: 100%;
+  --reveal-left: 0%;
+  --reveal-right: 0%;
+  clip-path: inset(0 var(--reveal-right) var(--reveal-hide) var(--reveal-left));
+  transition: none !important;
+  will-change: clip-path;
+}
+
+.arrow-card.reveal-region.is-built {
+  clip-path: none;
+  will-change: auto;
+}
+
+.arrow-reveal-registrar { display: none !important; }
+
+.project-heading-group { grid-column: 1 / -1; }
+
+.site-nav.nav-constructing {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+  animation: none !important;
+}
+
+.site-nav.nav-constructing.nav-shell-built {
+  background: #000 !important;
+  border-bottom-color: #303030 !important;
+}
+
+.site-nav.nav-constructing [data-nav-logo],
+.site-nav.nav-constructing [data-nav-link],
+.site-nav.nav-constructing [data-nav-cta] {
+  opacity: 0 !important;
+}
+
+.site-nav.nav-constructing .nav-item-built {
+  opacity: 1 !important;
+}
+
+.global-arrow-reveal[data-reveal-mode="NAV_CONSTRUCTION"] {
+  z-index: 10000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav.nav-constructing [data-nav-logo],
+  .site-nav.nav-constructing [data-nav-link],
+  .site-nav.nav-constructing [data-nav-cta] { opacity: 1 !important; }
+}
+
+.global-arrow-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  contain: strict;
+}
+
+.global-arrow-reveal[data-reveal-mode="ORBIT_LOADING"],
+.global-arrow-reveal[data-reveal-mode="SPREADING"] {
+  z-index: 10000;
+}
+
+.portfolio-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  opacity: 1;
+  transition: opacity 400ms ease;
+}
+
+.preloader-center {
+  display: grid;
+  justify-items: center;
+  padding-top: 230px;
+}
+
+.preloader-orbit {
+  --orbit-size: clamp(140px, 14vw, 180px);
+  --orbit-radius: calc(var(--orbit-size) / 2);
+  position: relative;
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+  animation: preloader-orbit 2.2s linear infinite;
+}
+
+.preloader-arrow-slot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 22px;
+  margin: -11px 0 0 -8px;
+  transform: rotate(var(--arrow-angle)) translateY(calc(var(--orbit-radius) * -1));
+  transform-origin: 8px 11px;
+}
+
+.preloader-arrow-stabilizer {
+  display: block;
+  width: 16px;
+  height: 22px;
+  animation: preloader-counter-orbit 2.2s linear infinite;
+}
+
+.preloader-arrow-stabilizer svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.preloader-center p {
+  margin: 0;
+  color: #fff;
+  font: 10px/1.2 "DM Mono", monospace;
+  letter-spacing: .22em;
+}
+
+@keyframes preloader-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes preloader-counter-orbit {
+  from { transform: rotate(var(--arrow-counter-angle)) rotate(0deg); }
+  to { transform: rotate(var(--arrow-counter-angle)) rotate(-360deg); }
+}
+
+@media (max-width: 550px) {
+  .preloader-orbit { --orbit-size: 140px; }
+  .preloader-arrow-slot,
+  .preloader-arrow-stabilizer { width: 14px; height: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-orbit,
+  .preloader-arrow-stabilizer { animation-play-state: paused; }
+  .portfolio-preloader { transition-duration: 180ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-card.reveal-region {
+    clip-path: none !important;
+  }
+}
